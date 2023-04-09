@@ -1,0 +1,104 @@
+import numpy as np
+
+a=np.arange(1,13).reshape((3,4))
+b=a*2
+
+b.ndim
+
+b.shape
+
+for row in b:
+    for column in row:
+        print(column, end=' ')
+    print()
+    
+for i in b:
+print(i, end='')
+
+
+
+import matplotlib.pyplot as plt
+
+x=np.array([1,6])
+y=np.array([5,10])
+
+plt.plot(x,y)
+plt.show()
+
+x=np.array([3,6,9,12])
+y=np.array([2,8,1,10])
+plt.plot(x,y, marker='o')
+plt.show()
+
+
+
+x=np.array([0,1,2,3,4,5])
+y=np.array([2,4,6,14,10,12])
+plt.plot(x,y, 'D:r', ms=10, mfc='g')
+
+
+
+y1=np.array([0,1,2,3,4])
+y2=np.array([5,6,7,8,9])
+y3=np.array([10,11,12,13,14])
+
+plt.plot(y1)
+plt.plot(y2)
+plt.plot(y3)
+
+plt.show()
+
+
+
+marks = {'Andy':88, 'Amy':66, 'James': 90, 'Jules': 55, 'Arthur': 77}
+names = list(marks.keys())
+grades = list(marks.values())
+plt.bar(range(len(marks)), grades, tick_label=names)
+plt.xlabel("Names of Students")
+plt.ylabel("Grades")
+plt.title("Students' Grades")
+plt.show()
+
+marks = {'Andy':88, 'Amy':66, 'James': 90, 'Jules': 55, 'Arthur': 77}
+names = list(marks.keys())
+grades = list(marks.values())
+plt.pie(grades, labels=names)
+plt.title("Students' Grades")
+plt.legend(loc='right')
+plt.show()
+
+
+
+y1=np.array([0,1,2,3,4])
+y2=np.array([5,6,7,8,9])
+y3=np.array([10,11,12,13,14])
+
+plt.subplot(2,3,1)
+plt.plot(y1)
+plt.plot(y2)
+plt.plot(y3)
+
+x = np.array([11, 22, 33, 44, 55])
+plt.subplot(2,3,2)
+plt.bar([1,2,3,4,5], x)
+
+x = np.array([25, 20, 50, 15])
+plt.subplot(2,3,3)
+plt.pie(x)
+
+x=np.array([3,6,9,12])
+y=np.array([2,8,1,10])
+plt.subplot(2,3,4)
+plt.plot(x,y)
+plt.grid(axis='x')
+
+x=np.array([5,1,2,3,6,3,6,2,3,4,7,9,8,1])
+y=np.array([2,8,1,1,2,5,4,6,7,5,8,9,2,1])
+plt.subplot(2,3,5)
+plt.scatter(x,y)
+
+x=np.random.normal(100,10,200)
+plt.subplot(2,3,6)
+plt.hist(x)
+
+plt.show()
